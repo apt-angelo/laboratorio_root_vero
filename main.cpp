@@ -77,5 +77,21 @@ int main()
     P2.Print_SomeProp();
     P3.Print_SomeProp();
     P4.Print_SomeProp();
+    Particle Q;
+    char ar[10] ={'a','b','c','d','e','f','g','h','i','j'};
+    double charge{0};
+    double mass{0};
+    for (int i{0};i<10;i++){
+        std::cout<<"Ok for main"<<std::endl;
+        if (i==5){
+            Q.AddParticleType(&ar[i],mass, charge, 4);    
+        }
+        else{
+            Q.AddParticleType(&ar[i],mass, charge);
+        }
+        charge++;
+        mass++;
+    }
+    Q.Print_fParticleType();
 
 }
