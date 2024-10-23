@@ -31,7 +31,7 @@ double Particle::GetPulsex() const { return fPx_; }
 double Particle::GetPulsey() const { return fPy_; }
 double Particle::GetPulsez() const { return fPz_; }
 
-void Particle::Setfindex(int fIndex) { findex_ = fIndex; }
+void Particle::Setfindex(int fIndex) { if (fIndex=>0 && fIndex<=10)? findex_ = fIndex : std::cout<<"Error"<<'\n'; }
 
 void Particle::SetP(double px, double py, double pz)
 {
@@ -61,7 +61,7 @@ int Particle::FindParticle(const char *name)
                 return i;
             }
         }
-    }
+    }   
 
     std::cout << "Error: no match!\n";
     return -1;
